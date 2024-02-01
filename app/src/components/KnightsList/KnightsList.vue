@@ -1,6 +1,7 @@
 <template>
   <div class="knight-list-container">
     <div class="new-knight-list-button">
+      <h1>Cavalheiros</h1>
       <button data-testid="knight-list-new-knight-button" @click="openForm()">
         Cadastrar cavalheiro
       </button>

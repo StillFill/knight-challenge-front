@@ -1,12 +1,18 @@
 <template>
   <div class="knight-form" v-if="!isConfirming">
-    <h1 data-testid="cadastrar-cavalheiro-titulo">Cadastrar cavalheiro</h1>
+    <div class="close-form-button-container">
+      <button @click="onsubmit" aria-label="Fechar cadastro">
+        <font-awesome-icon icon="fa-solid fa-close" size="2x" />
+      </button>
+    </div>
+    <h1>Cadastrar cavalheiro</h1>
     <h2>Informações gerais</h2>
     <div class="knight-form-row">
       <div class="knight-form-field">
-        <label>Nome</label>
+        <label for="input-knight-name">Nome</label>
         <input
           data-testid="input-knight-name"
+          id="input-knight-name"
           :disabled="isEditing"
           v-model="knight.name"
         />
@@ -16,10 +22,11 @@
       </div>
 
       <div class="knight-form-field">
-        <label>Apelido</label>
+        <label for="input-knight-nickname">Apelido</label>
         <input
           :disabled="isDeleted"
           data-testid="input-knight-nickname"
+          id="input-knight-nickname"
           v-model="knight.nickname"
         />
         <p
@@ -31,9 +38,10 @@
       </div>
 
       <div class="knight-form-field">
-        <label>Data de nascimento</label>
+        <label for="input-knight-birthday">Data de nascimento</label>
         <input
           data-testid="input-knight-birthday"
+          id="input-knight-birthday"
           :disabled="isEditing"
           v-model="knight.birthday"
           v-maska
@@ -51,9 +59,10 @@
     <h2>Atributos</h2>
     <div class="knight-form-row">
       <div class="knight-form-field">
-        <label>Força</label>
+        <label for="input-knight-strength">Força</label>
         <input
           data-testid="input-knight-strength"
+          id="input-knight-strength"
           :disabled="isEditing"
           type="number"
           v-model="knight.attributes.strength"
@@ -66,9 +75,10 @@
         </p>
       </div>
       <div class="knight-form-field">
-        <label>Destreza</label>
+        <label for="input-knight-dexterity">Destreza</label>
         <input
           data-testid="input-knight-dexterity"
+          id="input-knight-dexterity"
           :disabled="isEditing"
           type="number"
           v-model="knight.attributes.dexterity"
@@ -81,9 +91,10 @@
         </p>
       </div>
       <div class="knight-form-field">
-        <label>Constituição</label>
+        <label for="input-knight-constitution">Constituição</label>
         <input
           data-testid="input-knight-constitution"
+          id="input-knight-constitution"
           :disabled="isEditing"
           type="number"
           v-model="knight.attributes.constitution"
@@ -99,9 +110,10 @@
 
     <div class="knight-form-row">
       <div class="knight-form-field">
-        <label>Inteligencia</label>
+        <label for="input-knight-intelligence">Inteligencia</label>
         <input
           data-testid="input-knight-intelligence"
+          id="input-knight-intelligence"
           :disabled="isEditing"
           type="number"
           v-model="knight.attributes.intelligence"
@@ -115,9 +127,10 @@
       </div>
 
       <div class="knight-form-field">
-        <label>Sabedoria</label>
+        <label for="input-knight-wisdom">Sabedoria</label>
         <input
           data-testid="input-knight-wisdom"
+          id="input-knight-wisdom"
           :disabled="isEditing"
           type="number"
           v-model="knight.attributes.wisdom"
@@ -131,9 +144,10 @@
       </div>
 
       <div class="knight-form-field">
-        <label>Carisma</label>
+        <label for="input-knight-charisma">Carisma</label>
         <input
           data-testid="input-knight-charisma"
+          id="input-knight-charisma"
           :disabled="isEditing"
           type="number"
           v-model="knight.attributes.charisma"
@@ -149,9 +163,10 @@
 
     <div class="knight-form-row">
       <div class="knight-form-field">
-        <label>Attributo principal</label>
+        <label for="input-knight-keyAttribute">Attributo principal</label>
         <select
           data-testid="input-knight-keyAttribute"
+          id="input-knight-keyAttribute"
           :disabled="isEditing"
           v-model="knight.keyAttribute"
         >
@@ -177,37 +192,41 @@
       <div v-for="weapon in knight.weapons" v-bind:key="weapon.id">
         <div class="knight-form-row">
           <div class="knight-form-field">
-            <label>Nome da arma</label>
+            <label for="input-knight-weapon-name">Nome da arma</label>
             <input
               data-testid="input-knight-weapon-name"
+              id="input-knight-weapon-name"
               :disabled="isEditing"
               v-model="weapon.name"
             />
           </div>
 
           <div class="knight-form-field">
-            <label>Atributo</label>
+            <label for="input-knight-weapon-attribute">Atributo</label>
             <input
               data-testid="input-knight-weapon-attribute"
+              id="input-knight-weapon-attribute"
               :disabled="isEditing"
               v-model="weapon.attr"
             />
           </div>
 
           <div class="knight-form-field">
-            <label>Mod</label>
+            <label for="input-knight-weapon-mod">Mod</label>
             <input
               data-testid="input-knight-weapon-mod"
+              id="input-knight-weapon-mod"
               :disabled="isEditing"
               type="number"
               v-model="weapon.mod"
             />
           </div>
 
-          <div class="knight-form-field">
-            <label>Equipado</label>
+          <div class="knight-form-field checkbox">
+            <label for="input-knight-weapon-equipped">Equipado</label>
             <input
               data-testid="input-knight-weapon-equipped"
+              id="input-knight-weapon-equipped"
               :disabled="isEditing"
               type="checkbox"
               v-model="weapon.equipped"
@@ -218,6 +237,7 @@
 
         <p
           data-testid="input-knight-weapon-error"
+          id="input-knight-weapon-error"
           class="knight-form-field-error"
           v-if="fieldErrors.includes('weapons')"
         >
@@ -241,7 +261,7 @@
       </button>
     </div>
 
-    <div class="become-hero-buton" v-if="isEditing && !isDeleted">
+    <div class="become-hero-button" v-if="isEditing && !isDeleted">
       <button data-testid="knight-form-delete-button" @click="removeKnight()">
         Tornar Heroi (Remover)
       </button>

@@ -24,7 +24,8 @@
 
 .new-knight-list-button {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
 }
 
@@ -36,6 +37,28 @@
     border: 0;
     border-radius: 6px;
     cursor: pointer;
+}
+
+@media(max-width: 600px) {
+    .new-knight-list-button {
+        flex-direction: column;
+    }
+    .new-knight-list-button button {
+        width: 100%;
+    }
+
+    .vtl-paging-count-dropdown {
+        margin-right: 15px;
+    }
+
+    .vtl-paging-count-label, .vtl-paging-page-label{
+        margin-right: 5px;
+    }
+
+    .vtl-paging-pagination-ul {
+        margin-top: 30px !important;
+        justify-content: center !important;
+    }
 }
 
 .list-toggle-buttons {
