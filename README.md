@@ -1,34 +1,14 @@
 # knight-challenge-front
 
-## Project setup
-```
-npm install
-```
+## Aplicação
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Pre-requisitos
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Node (rodar local)
+- Docker (rodar containers)
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## Testes
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+- Teste unitários (npm run test) (pasta /app)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Teste automatizados (npm run test) (pasta /tests)

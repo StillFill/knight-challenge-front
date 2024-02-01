@@ -1,0 +1,107 @@
+.knight-form {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    position: relative;
+}
+
+.knight-form-row {
+    display: flex;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.knight-form-field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+
+.knight-form-field:first-child {
+    margin-left: 0;   
+}
+
+.knight-form-field:last-child {
+    margin-right: 0;   
+}
+
+.knight-form-field input {
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    padding: 3px 5px;
+}
+
+
+.knight-form-field input:disabled, .knight-form-field select:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.knight-form-field select {
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    padding: 3px 5px;
+}
+
+.knight-form-field label {
+    font-weight: 500;
+    font-family: 'Arial';
+    margin-bottom: 5px;
+}
+
+
+.knight-form-field-error {
+    color: red;
+    margin-top: 5px;
+}
+
+.knight-form-submit-button-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.knight-form-submit-button-container button {
+    border: 0;
+    border-radius: 6px;
+    padding: 5px 30px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: #008000;
+    color: white;
+    cursor: pointer;
+}
+
+.add-weapon-button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 2em;
+    padding: 0 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    text-align: center;
+    background-color: white;
+}
+
+.add-weapon-button:not([disabled]):hover {
+    background-color: rgb(223, 223, 223);
+    cursor: pointer;
+}
+
+.become-hero-buton {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.become-hero-buton button {
+    border: 0;
+    border-radius: 6px;
+    padding: 5px 30px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}

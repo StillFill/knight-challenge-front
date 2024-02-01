@@ -1,0 +1,71 @@
+.modal-container {
+    z-index: 1000;
+    cursor: default;
+}
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.knight-list-container {
+    margin: 30px;
+}
+
+.knight-list-container table {
+    border-radius: 8px 8px 0 0;       
+}
+
+.knight-list-container tr {
+    cursor: pointer;
+}
+
+.new-knight-list-button {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+}
+
+.new-knight-list-button button {
+    font-size: 1.2em;
+    padding: 10px 30px;
+    background-color: #008000;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.list-toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.list-toggle-buttons button {
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: white;
+    font-size: 1.5em;
+    width: 200px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.list-toggle-buttons button:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+.list-toggle-buttons button.selected {
+    background-color: rgb(90, 90, 90);
+    color: white;
+}
+
+.list-toggle-buttons button:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.list-toggle-buttons button:last-child {
+    border-radius: 0 8px 8px 0;
+}
